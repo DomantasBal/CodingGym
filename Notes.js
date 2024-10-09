@@ -42,3 +42,18 @@
 // • replace();
 // • includes();
 // • split();
+// • charAt();
+
+// ################## Numbers ##################
+// Remind:
+// • toFixed();
+// • Math.ceil();
+// • Math.floor();
+// • Math.min();
+// • Math.max();
+// • Math.random():
+
+// ################## Dates & Time ##################
+// • Intl.DateTimeFormat('en-US').format(date);
+// • Intl.DateTimeFormat('default', {month: 'long'}).format(date);
+// • date.toLocaleString('default', {weekday: 'long', year:'numeric', month:'long'});
