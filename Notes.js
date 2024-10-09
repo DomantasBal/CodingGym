@@ -33,3 +33,12 @@
 // • Boolean();
 
 // NaN - is a property of a global window object. Non writtable and typeof is number.
+
+// ################## Strings ##################
+//  Remind:
+// • Splice, Slice
+// • substring();
+// • trim();
+// • replace();
+// • includes();
+// • split();
