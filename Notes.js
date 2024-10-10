@@ -57,3 +57,8 @@
 // • Intl.DateTimeFormat('en-US').format(date);
 // • Intl.DateTimeFormat('default', {month: 'long'}).format(date);
 // • date.toLocaleString('default', {weekday: 'long', year:'numeric', month:'long'});
+
+// ################## Array Methods ##################
+// Remind:
+// • Splice(); - Mutates original array
+// • Slice();
