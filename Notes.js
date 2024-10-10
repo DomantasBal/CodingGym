@@ -60,5 +60,5 @@
 
 // ################## Array Methods ##################
 // Remind:
-// • Splice(); - Mutates original array
-// • Slice();
+// • Splice(start, number of elements); - Mutates original array
+// • Slice(start From, to End index);
