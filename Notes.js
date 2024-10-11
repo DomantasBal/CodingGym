@@ -62,3 +62,8 @@
 // Remind:
 // • Splice(start, number of elements); - Mutates original array
 // • Slice(start From, to End index);
+// • Array.from();
+// • Array.of();
+
+// ################## Objects ##################
+// • Object.assign();
