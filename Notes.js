@@ -66,4 +66,4 @@
 // • Array.of();
 
 // ################## Objects ##################
-// • Object.assign();
+// • Object.assign(target, source1,source2);
