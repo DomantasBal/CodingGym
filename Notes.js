@@ -67,3 +67,6 @@
 
 // ################## Objects ##################
 // • Object.assign(target, source1,source2);
+// • Object.keys();
+// • Object.values();
+// • Object.entries();
