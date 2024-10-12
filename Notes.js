@@ -70,3 +70,31 @@
 // • Object.keys();
 // • Object.values();
 // • Object.entries();
+
+// ################## Objects Destructuring ##################
+// var:name - renames destructured variable
+// obj:{property, property} - destructures nested objects
+
+// Object Destructuring
+// const person = {
+//   name: 'Domantas',
+//   last: 'Bal',
+//   age: 99,
+//   favFood: {
+//     pizza: true,
+//     fish: false,
+//   },
+// };
+
+// const {
+//   name: vardas,
+//   last: pavarde,
+//   age: amzius,
+//   favFood: { pizza, fish },
+// } = person;
+
+// console.log(fish);
+
+// Array Destructuring
+// let [num1, num2, num3] = [33, 44, 56];
+// console.log(num1);
