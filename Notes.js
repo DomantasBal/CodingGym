@@ -98,3 +98,9 @@
 // Array Destructuring
 // let [num1, num2, num3] = [33, 44, 56];
 // console.log(num1);
+
+// ################## Scope ##################
+// global var abc - is added to global window object
+// var - limited to function scope
+// let, const - limited to block scope
+// Note: JS is lexical scope not dynamic scope language
