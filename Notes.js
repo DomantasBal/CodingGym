@@ -111,8 +111,8 @@
 //     const user = 'John';
 //     console.log(user);
 // })();
-// 
-// Use Case: 
+//
+// Use Case:
 // Helps to avoid global scope pollution.
 // Encapsulates and creates private variables.
 // Module pattern in ES5 allows public and private access
@@ -124,7 +124,7 @@
 //     function privateFunc(){
 //         console.log('I am private func run from IIFE');
 //     }
-  
+
 //   privateFunc();
 
 //     function publicFunc(){
@@ -139,3 +139,30 @@
 
 // console.log(module.publicFunc());
 // console.log(module.publicVar);
+
+// ################## Execution Context ##################
+
+// Memory Creation Phase:
+
+// 1. Creates the global object: In a browser, this is window, and in Node.js, it's global.
+
+// 2. Creates the this object: In the global context, this refers to the global object (window in the browser and global in Node.js).
+
+// 3. Sets up memory space (also known as the "Variable Environment"):
+// It sets aside memory for variables and functions. Variables declared with var are initialized as undefined,
+// while functions are stored with their entire definition (hoisted).
+// Variables declared with let and const are not initialized until the code is executed.
+
+// 4. Hoisting occurs: In this phase, the engine allocates memory for variables and functions.
+// Function declarations are hoisted, meaning the entire function is available before the code executes,
+// while variables declared with var are hoisted but initialized to undefined.
+
+// Execution Phase:
+
+// 1. Executes code line by line: After memory allocation,
+// the JavaScript engine begins executing the code,
+// line by line, assigning values to variables, calling functions.
+
+// 2. Creates a new execution context for each function call:
+// Whenever a function is invoked, a new execution context is created.
+// This new context will have its own memory for variables and its own this value.
