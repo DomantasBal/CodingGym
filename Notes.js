@@ -157,6 +157,8 @@
 // Function declarations are hoisted, meaning the entire function is available before the code executes,
 // while variables declared with var are hoisted but initialized to undefined.
 
+// NOTE: If you use var instead of let or const then var is binded to the global object
+
 // Execution Phase:
 
 // 1. Executes code line by line: After memory allocation,
@@ -166,3 +168,8 @@
 // 2. Creates a new execution context for each function call:
 // Whenever a function is invoked, a new execution context is created.
 // This new context will have its own memory for variables and its own this value.
+
+// ################## Call Stack ##################
+// • Stack of functions to be executed
+// • Manages execution contexts
+// • Stacks ar LIFO - Last in First out
