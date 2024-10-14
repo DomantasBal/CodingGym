@@ -104,3 +104,38 @@
 // var - limited to function scope
 // let, const - limited to block scope
 // Note: JS is lexical scope not dynamic scope language
+
+// ################## Functions ##################
+// • IIFE - Imidiately invoked function expressions;
+// (function (){
+//     const user = 'John';
+//     console.log(user);
+// })();
+// 
+// Use Case: 
+// Helps to avoid global scope pollution.
+// Encapsulates and creates private variables.
+// Module pattern in ES5 allows public and private access
+
+// var module = (function(){
+//     var privateVar = 'private';
+//     var publicVar = 'public';
+
+//     function privateFunc(){
+//         console.log('I am private func run from IIFE');
+//     }
+  
+//   privateFunc();
+
+//     function publicFunc(){
+//         console.log('I am public func');
+//     }
+
+//     return{
+//         publicVar: publicVar,
+//         publicFunc: publicFunc,
+//     };
+// })();
+
+// console.log(module.publicFunc());
+// console.log(module.publicVar);
