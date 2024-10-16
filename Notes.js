@@ -212,6 +212,6 @@
 // console.log(a);
 
 // ??|| - assigns right side only if the value is null or undefined
-let b = 1;
-b ??= 20;
-console.log(b);
+// let b = 1;
+// b ??= 20;
+// console.log(b);
