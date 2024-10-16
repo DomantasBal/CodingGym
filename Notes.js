@@ -176,31 +176,46 @@
 
 // ################## Switch ##################
 // Reminder using switch
-function calculator(num1, num2, operator) {
-  let result = 0;
+// function calculator(num1, num2, operator) {
+//   let result = 0;
 
-  switch (operator) {
-    case '+':
-      result = num1 + num2;
-      break;
+//   switch (operator) {
+//     case '+':
+//       result = num1 + num2;
+//       break;
 
-    case '-':
-      result = num1 - num2;
-      break;
+//     case '-':
+//       result = num1 - num2;
+//       break;
 
-    case '*':
-      result = num1 * num2;
-      break;
+//     case '*':
+//       result = num1 * num2;
+//       break;
 
-    case '/':
-      result = num1 / num2;
-      break;
+//     case '/':
+//       result = num1 / num2;
+//       break;
 
-    default:
-      result = 'please input correct operator';
-  }
+//     default:
+//       result = 'please input correct operator';
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
-console.log(calculator(32, 2, '/'));
+// console.log(calculator(64, 99, '*'));
+
+// ################## Coalescing operator ##################
+let a = null;
+
+// 1.
+// if (!a) {
+//   a = 10;
+// }
+
+// 2.
+// a = a || 10;
+
+// 3.
+// a ||= 10;
+// console.log(a);
