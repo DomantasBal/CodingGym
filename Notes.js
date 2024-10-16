@@ -206,16 +206,12 @@
 // console.log(calculator(64, 99, '*'));
 
 // ################## Coalescing operator ##################
-let a = null;
-
-// 1.
-// if (!a) {
-//   a = 10;
-// }
-
-// 2.
-// a = a || 10;
-
-// 3.
+//  ||= - assigns right side only if the value is falsy
+// let a = false;
 // a ||= 10;
 // console.log(a);
+
+// ??|| - assigns right side only if the value is null or undefined
+let b = 1;
+b ??= 20;
+console.log(b);
