@@ -215,3 +215,31 @@
 // let b = 1;
 // b ??= 20;
 // console.log(b);
+
+// const arr = ['lemon', 'apple', 'orange'];
+
+// const obj = {
+//   name: 'domantas',
+//   age: 99,
+// };
+
+// ################## Loops ##################
+// Array
+// for OF - returns values
+// for IN - returns index
+// for (let item of arr) {
+//   console.log(item);
+// }
+
+// Objects
+// for OF - returns values
+// for IN - returns index
+// *Object.values() - returns array of values
+// for (let item of Object.values(obj)) {
+//   console.log(item);
+// }
+
+// Object to return key value pair
+// for (let item in obj) {
+//   console.log(item, obj[item]);
+// }
