@@ -245,24 +245,48 @@
 // }
 
 // ################## Array Methods ##################
-let companies = [
-  {
-    name: 'Dell',
-    employees: 33,
-  },
-  {
-    name: 'Apple',
-    employees: 22,
-  },
-  {
-    name: 'IBM',
-    employees: 848,
-  },
-  {
-    name: 'Danske',
-    employees: 13,
-  },
-];
 
-let companyNames = companies.map((company) => company.name);
-console.log(companyNames);
+// MAP
+// let companies = [
+//   {
+//     name: 'Dell',
+//     employees: 33,
+//   },
+//   {
+//     name: 'Apple',
+//     employees: 22,
+//   },
+//   {
+//     name: 'IBM',
+//     employees: 848,
+//   },
+//   {
+//     name: 'Danske',
+//     employees: 13,
+//   },
+// ];
+
+// let companyNames = companies.map((company) => company.name);
+// console.log(companyNames);
+
+// REDUCE
+// let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// let sum = nums.reduce((acc, number) => acc + number, 0);
+// console.log(sum);
+// let cart = [
+//   {
+//     name: 'Wireless Headphones',
+//     price: 79.99,
+//   },
+//   {
+//     name: 'Bluetooth Speaker',
+//     price: 45.5,
+//   },
+//   {
+//     name: 'Smartphone Stand',
+//     price: 12.75,
+//   },
+// ];
+
+// let total = cart.reduce((acc, product) => acc + product.price, 0);
+// console.log(total);
