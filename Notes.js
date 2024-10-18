@@ -243,3 +243,26 @@
 // for (let item in obj) {
 //   console.log(item, obj[item]);
 // }
+
+// ################## Array Methods ##################
+let companies = [
+  {
+    name: 'Dell',
+    employees: 33,
+  },
+  {
+    name: 'Apple',
+    employees: 22,
+  },
+  {
+    name: 'IBM',
+    employees: 848,
+  },
+  {
+    name: 'Danske',
+    employees: 13,
+  },
+];
+
+let companyNames = companies.map((company) => company.name);
+console.log(companyNames);
