@@ -291,51 +291,57 @@
 // let total = cart.reduce((acc, product) => acc + product.price, 0);
 // console.log(total);
 
-let people = [
-  {
-    name: 'Tom',
-    age: 33,
-    email: 'tom@gmail.com',
-    city: 'NY',
-  },
-  {
-    name: 'Sarah',
-    age: 27,
-    email: 'sarah@yahoo.com',
-    city: 'Chicago',
-  },
-  {
-    name: 'Mike',
-    age: 41,
-    email: 'mike123@hotmail.com',
-    city: 'Los Angeles',
-  },
-  {
-    name: 'Emma',
-    age: 29,
-    email: 'emma.w@gmail.com',
-    city: 'San Francisco',
-  },
-  {
-    name: 'John',
-    age: 35,
-    email: 'john.doe@outlook.com',
-    city: 'Houston',
-  },
-  {
-    name: 'Lisa',
-    age: 24,
-    email: 'lisa99@gmail.com',
-    city: 'Miami',
-  },
-];
+// let people = [
+//   {
+//     name: 'Tom',
+//     age: 33,
+//     email: 'tom@gmail.com',
+//     city: 'NY',
+//   },
+//   {
+//     name: 'Sarah',
+//     age: 27,
+//     email: 'sarah@yahoo.com',
+//     city: 'Chicago',
+//   },
+//   {
+//     name: 'Mike',
+//     age: 41,
+//     email: 'mike123@hotmail.com',
+//     city: 'Los Angeles',
+//   },
+//   {
+//     name: 'Emma',
+//     age: 29,
+//     email: 'emma.w@gmail.com',
+//     city: 'San Francisco',
+//   },
+//   {
+//     name: 'John',
+//     age: 35,
+//     email: 'john.doe@outlook.com',
+//     city: 'Houston',
+//   },
+//   {
+//     name: 'Lisa',
+//     age: 24,
+//     email: 'lisa99@gmail.com',
+//     city: 'Miami',
+//   },
+// ];
 
-let youngPeople = people
-  .filter((person) => person.age < 30)
-  .map((person) => {
-    return {
-      name: person.name,
-      age: person.age,
-    };
-  });
-console.log(youngPeople);
+// let youngPeople = people
+//   .filter((person) => person.age < 30)
+//   .map((person) => {
+//     return {
+//       name: person.name,
+//       age: person.age,
+//     };
+//   });
+// console.log(youngPeople);
+
+let names = ['coder', 'dev', 'hacker'];
+let result = names.map(
+  (word) => word[0].toUpperCase() + word.slice(1, word.length)
+);
+console.log(result);
