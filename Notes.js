@@ -340,8 +340,17 @@
 //   });
 // console.log(youngPeople);
 
-let names = ['coder', 'dev', 'hacker'];
-let result = names.map(
-  (word) => word[0].toUpperCase() + word.slice(1, word.length)
-);
-console.log(result);
+// let names = ['coder', 'dev', 'hacker'];
+// let result = names.map(
+//   (word) => word[0].toUpperCase() + word.slice(1, word.length)
+// );
+// console.log(result);
+
+// ################## DOM ##################
+// Reminder:
+// let output = document.URL;
+// let output = document.links;
+// let output = (document.links[0].href = 'https://facebook.com');
+// let output = (document.links[0].id = 'google-link');
+// let output = (document.links[0].className = 'google-link-class');
+// console.log(output);
