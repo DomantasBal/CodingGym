@@ -354,3 +354,6 @@
 // let output = (document.links[0].id = 'google-link');
 // let output = (document.links[0].className = 'google-link-class');
 // console.log(output);
+
+// HTML collection can not use array methods. Node list can yous array methods.
+// *can use Array.from() method to convert HTML collection to array though.
