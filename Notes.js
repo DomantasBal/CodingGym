@@ -357,3 +357,16 @@
 
 // HTML collection can not use array methods. Node list can yous array methods.
 // *can use Array.from() method to convert HTML collection to array though.
+
+// let parent = document.querySelector('.parent');
+// let child = document.querySelector('.first_child');
+// let sibling = document.querySelector('.second_child');
+
+// parent.firstElementChild.style.color = 'red';
+// parent.lastElementChild.style.color = 'blue';
+
+// child.parentElement.style.border = '1px solid #CCC';
+// child.parentElement.style.padding = '10px';
+
+// sibling.nextElementSibling.style.color = 'purple';
+// sibling.nextElementSibling.style.fontWeight = '900';
