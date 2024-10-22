@@ -370,3 +370,13 @@
 
 // sibling.nextElementSibling.style.color = 'purple';
 // sibling.nextElementSibling.style.fontWeight = '900';
+
+// const container = document.querySelector('.container');
+// const div = document.createElement('div');
+
+// div.id = 'testID';
+// div.setAttribute('class', 'testClass');
+// const text = document.createTextNode('HELLO THERE');
+// div.appendChild(text);
+
+// container.appendChild(div);
