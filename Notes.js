@@ -346,7 +346,7 @@
 // );
 // console.log(result);
 
-// ################## DOM ##################
+// ############################################ DOM ############################################
 // Reminder:
 // let output = document.URL;
 // let output = document.links;
@@ -382,25 +382,52 @@
 // container.appendChild(div);
 // appendChild - always expects node it can not be html string as for example `<div></div>`
 
-// Quick n Dirty method - why? - it reparses and recreates all the DOM nodes inside ul element = less efficient
-const ul = document.querySelector('ul');
-function addToList(item) {
-  const li = document.createElement('li');
-  li.innerHTML = `<li>${item}</li>`;
-  ul.appendChild(li);
-}
-addToList('List item 1');
+// // Quick n Dirty method - why? - it reparses and recreates all the DOM nodes inside ul element = less efficient
+// const ul = document.querySelector('ul');
+// function addToList(item) {
+//   const li = document.createElement('li');
+//   li.innerHTML = `<li>${item}</li>`;
+//   ul.appendChild(li);
+// }
+// addToList('List item 1');
 
-// Clean and performant
-function createNewItem(item) {
-  const li = document.createElement('li');
-  li.appendChild(document.createTextNode(item));
+// // Clean and performant
+// function createNewItem(item) {
+//   const li = document.createElement('li');
+//   li.appendChild(document.createTextNode(item));
 
-  const btn = document.createElement('button');
-  btn.className = 'btn btn-primary';
-  btn.textContent = 'CLICK CLICK';
-  li.appendChild(btn);
+//   const btn = document.createElement('button');
+//   btn.className = 'btn btn-primary';
+//   btn.textContent = 'CLICK CLICK';
+//   li.appendChild(btn);
 
-  ul.appendChild(li);
-}
-createNewItem('TESSSSST ITEM');
+//   ul.appendChild(li);
+// }
+// createNewItem('TESSSSST ITEM');
+
+// function replaceItem() {
+//   const firstItem = document.querySelector('li:first-child');
+//   const li = document.createElement('li');
+//   li.textContent = 'Replaced Item';
+
+//   firstItem.replaceWith(li);
+// }
+
+// replaceItem();
+
+// Removing list item
+// function removeItem(itemNumber) {
+//   const ul = document.querySelector('ul');
+//   const li = document.querySelector(`li:nth-child(${itemNumber})`);
+//   ul.removeChild(li);
+//   //   li.remove();
+// }
+
+// removeItem(1);
+
+// Reminder:
+// • .replaceWith()
+// • .createElement()
+// • .appendChild()
+// • .remove()
+// • .removeChild()
