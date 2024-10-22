@@ -380,3 +380,27 @@
 // div.appendChild(text);
 
 // container.appendChild(div);
+// appendChild - always expects node it can not be html string as for example `<div></div>`
+
+// Quick n Dirty method - why? - it reparses and recreates all the DOM nodes inside ul element = less efficient
+const ul = document.querySelector('ul');
+function addToList(item) {
+  const li = document.createElement('li');
+  li.innerHTML = `<li>${item}</li>`;
+  ul.appendChild(li);
+}
+addToList('List item 1');
+
+// Clean and performant
+function createNewItem(item) {
+  const li = document.createElement('li');
+  li.appendChild(document.createTextNode(item));
+
+  const btn = document.createElement('button');
+  btn.className = 'btn btn-primary';
+  btn.textContent = 'CLICK CLICK';
+  li.appendChild(btn);
+
+  ul.appendChild(li);
+}
+createNewItem('TESSSSST ITEM');
