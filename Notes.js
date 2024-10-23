@@ -487,3 +487,20 @@ const click = () => console.log('click');
 // btn.addEventListener('mouseout', () => console.log('mouse out ')); // Mouse out
 
 // ################## Event Obejct ##################
+// e.target - element that triggered the event
+// e.currentTarget - the element the event listener is attached to
+// e.type - type of event trigered
+
+// function onClick(e) {
+//   console.log(e.target);
+//   console.log(e.currentTarget);
+//   console.log(e.type);
+//   console.log(e.timeStamp);
+// }
+// btn.addEventListener('click', onClick);
+
+// Event listener bubles up to body elemet
+// document.body.addEventListener('click', (e) => {
+//   console.log(e.target);
+//   console.log(e.currentTarget);
+// });
