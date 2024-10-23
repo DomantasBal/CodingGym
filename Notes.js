@@ -561,3 +561,7 @@
 // }
 
 // window.addEventListener('keydown', showKeyCodes);
+
+const selectedValue = (e) => console.log(e.target.options[e.target.value].text); // returns actual selection content
+const select = document.querySelector('#option-list');
+select.addEventListener('input', selectedValue);
