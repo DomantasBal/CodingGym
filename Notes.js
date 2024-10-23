@@ -567,7 +567,7 @@
 // select.addEventListener('input', selectedValue);
 
 // ################## FormData Object ##################
-const form = document.getElementById('item-form');
+// const form = document.getElementById('item-form');
 
 // function onSubmit(e) {
 //   e.preventDefault();
@@ -594,3 +594,20 @@ const form = document.getElementById('item-form');
 //   }
 // }
 // form.addEventListener('submit', onSubmitFormData);
+
+// ################## Event Bubbling ##################
+// • e.stopPropagation - stops event bubling to parent elements and upwards to the DOM
+
+// const button = document.querySelector('form button');
+// button.addEventListener('click', (e) => {
+//   alert('button was clicked');
+//   e.stopPropagation();
+// });
+
+// const div = document.querySelector('form div:nth-child(2)');
+// div.addEventListener('click', () => alert('div was clicked'));
+
+// const form = document.querySelector('form');
+// form.addEventListener('click', () => alert('form was clikced'));
+
+// document.body.addEventListener('click', () => alert('BUBBLING'));
