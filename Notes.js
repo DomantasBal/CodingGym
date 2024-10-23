@@ -465,8 +465,8 @@
 // • .addEventListener()
 // • .removeEventListener()
 
-const btn = document.querySelector('#btn');
-const click = () => console.log('click');
+// const btn = document.querySelector('#btn');
+// const click = () => console.log('click');
 
 // setTimeout(() => btn.removeEventListener('click', click), 5000);
 // setTimeout(() => btn.click(), 3000);
@@ -504,3 +504,41 @@ const click = () => console.log('click');
 //   console.log(e.target);
 //   console.log(e.currentTarget);
 // });
+
+// ################## Keyboard Events ##################
+// Reminder:
+// • keypress - activated on pressing one time
+// • keydown - activated on pressing one time and also holding
+// • keyup - activated when releasing the button
+
+// Getting pressed key value:
+// • Key - e.key - gives pressed key value
+// • keyCode - e.keyCode - gives key code
+// • code - e.code - gives string pressed key
+
+const inputItem = document.querySelector('.input-item');
+// inputItem.addEventListener('keypress', () => console.log('keypress')); // one time press
+// inputItem.addEventListener('keydown', () => console.log('keydown')); // press and hold continues
+// inputItem.addEventListener('keyup', () => console.log('keyup')); // when key released
+
+// function onKeyDown(e) {
+// key
+//   console.log(e.key);
+// keycode
+//   console.log(e.keyCode);
+// code
+//   console.log(e.code);
+// Shift
+//   console.log(e.shiftKey);
+// CTRL
+//   console.log(e.ctrlKey);
+// Alt
+//   console.log(e.altKey);
+
+// Combo
+//   if ((e.key = 'K' && e.shiftKey)) {
+//     console.log('shift K');
+//   }
+// }
+
+// inputItem.addEventListener('keydown', onKeyDown);
