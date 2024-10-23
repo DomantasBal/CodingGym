@@ -562,6 +562,35 @@
 
 // window.addEventListener('keydown', showKeyCodes);
 
-const selectedValue = (e) => console.log(e.target.options[e.target.value].text); // returns actual selection content
-const select = document.querySelector('#option-list');
-select.addEventListener('input', selectedValue);
+// const selectedValue = (e) => console.log(e.target.options[e.target.value].text); // returns actual selection content
+// const select = document.querySelector('#option-list');
+// select.addEventListener('input', selectedValue);
+
+// ################## FormData Object ##################
+const form = document.getElementById('item-form');
+
+// function onSubmit(e) {
+//   e.preventDefault();
+//   const item = document.getElementById('item-input').value;
+//   const priority = document.getElementById('priority-input').value;
+
+//   if (item === '' || priority === '0') {
+//     alert('Please fill in all fields');
+//     return;
+//   }
+// }
+
+// function onSubmitFormData(e) {
+//   e.preventDefault();
+
+//   const formData = new FormData(form);
+//   const item = formData.get('item'); // item is name='item' on input field
+//   const priority = formData.get('priority'); // priority is name='priority' on input field
+
+//   const entries = formData.entries(); // gets 'iterator' allows to loop throught it
+
+//   for (let entry of entries) {
+//     console.log(`${entry[0]}: ${entry[1]}`);
+//   }
+// }
+// form.addEventListener('submit', onSubmitFormData);
