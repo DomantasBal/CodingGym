@@ -459,3 +459,31 @@
 // • .classList.remove
 // • .classList.toggle
 // • .classList.replace('current', 'replace')
+
+// ################## Event Listeners ##################
+
+// • .addEventListener()
+// • .removeEventListener()
+
+const btn = document.querySelector('#btn');
+const click = () => console.log('click');
+
+// setTimeout(() => btn.removeEventListener('click', click), 5000);
+// setTimeout(() => btn.click(), 3000);
+
+// function clearList() {
+//   const ul = document.querySelector('ul');
+//   ul.innerHTML = '';
+// }
+// btn.addEventListener('click', clearList);
+
+// btn.addEventListener('click', () => console.log('click')); // Click
+// btn.addEventListener('dblclick', () => console.log('Double click')); // Mouse Double click
+// btn.addEventListener('contextmenu', () => console.log('Right click')); // Mouse Right click
+// btn.addEventListener('mousedown', () => console.log('Mouse down')); // Mouse Down click
+// btn.addEventListener('mouseup', () => console.log('Mouse up')); // Mouse Up click
+// btn.addEventListener('wheel', () => console.log('Wheel')); // Mouse wheel
+// btn.addEventListener('mouseover', () => console.log('mouse over')); // Mouse over
+// btn.addEventListener('mouseout', () => console.log('mouse out ')); // Mouse out
+
+// ################## Event Obejct ##################
