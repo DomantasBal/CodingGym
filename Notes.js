@@ -516,7 +516,7 @@
 // • keyCode - e.keyCode - gives key code
 // • code - e.code - gives string pressed key
 
-const inputItem = document.querySelector('.input-item');
+// const inputItem = document.querySelector('.input-item');
 // inputItem.addEventListener('keypress', () => console.log('keypress')); // one time press
 // inputItem.addEventListener('keydown', () => console.log('keydown')); // press and hold continues
 // inputItem.addEventListener('keyup', () => console.log('keyup')); // when key released
@@ -542,3 +542,22 @@ const inputItem = document.querySelector('.input-item');
 // }
 
 // inputItem.addEventListener('keydown', onKeyDown);
+
+// function showKeyCodes(e) {
+//   const insert = document.querySelector('.container2');
+//   insert.innerHTML = '';
+
+//   const keyCodes = {
+//     'e.key': e.key,
+//     'e.keyCode': e.keyCode,
+//     'e.Code': e.code,
+//   };
+
+//   for (let value in keyCodes) {
+//     const div = document.createElement('div');
+//     div.appendChild(document.createTextNode(`${value} : ${keyCodes[value]}`));
+//     insert.appendChild(div);
+//   }
+// }
+
+// window.addEventListener('keydown', showKeyCodes);
