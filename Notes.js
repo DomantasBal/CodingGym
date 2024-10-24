@@ -611,3 +611,12 @@
 // form.addEventListener('click', () => alert('form was clikced'));
 
 // document.body.addEventListener('click', () => alert('BUBBLING'));
+
+// ################## Event Delegation ##################
+
+// You can add the event listener on the parent to target the child elements
+// Instead of adding to each li element separately
+let list = document.querySelector('ul');
+list.addEventListener('click', (e) => {
+  console.log(e.target);
+});
