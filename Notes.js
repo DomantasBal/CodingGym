@@ -616,7 +616,19 @@
 
 // You can add the event listener on the parent to target the child elements
 // Instead of adding to each li element separately
-let list = document.querySelector('ul');
-list.addEventListener('click', (e) => {
-  console.log(e.target);
-});
+// let list = document.querySelector('ul');
+// list.addEventListener('click', (e) => {
+//   console.log(e.target);
+// });
+
+// ################## Page Loading & Window Events ##################
+
+// // Executes after all content loaded (images, text, ect..)
+// window.addEventListener('load', () => {
+//   console.log('hey');
+// });
+
+// // Executes after DOM content laoded
+// window.addEventListener('DOMContentLoaded', () => {
+//   console.log('hey after DOM loaded');
+// });
