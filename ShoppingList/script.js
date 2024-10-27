@@ -47,6 +47,7 @@ function removeItem(e) {
   if (e.target.parentElement.classList.contains('remove-item')) {
     if (confirm('are you sure')) {
       e.target.parentElement.parentElement.remove();
+      checkUI();
     }
   }
 }
@@ -55,6 +56,7 @@ function clearItems(e) {
   while (itemList.firstChild) {
     itemList.removeChild(itemList.firstChild);
   }
+  checkUI();
 }
 
 function checkUI() {
