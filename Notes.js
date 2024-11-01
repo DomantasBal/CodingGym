@@ -633,9 +633,39 @@
 //   console.log('hey after DOM loaded');
 // });
 
-// ################## LocalStorage & Session storage ##################
+// ################## LocalStorage ##################
 
 // localStorage.setItem('key', 'value');
 // localStorage.getItem('key');
 // localStorage.removeItem('key');
 // localStorage.clear();
+
+// ############################################ Asynchronous JS ############################################
+// • TASK QUEUE - FIRST IN FIRST OUT (FIFO)
+// • EVENT LOOP
+// • MEMORY HEAP
+// • CALL STACK
+// • WEB API
+// • GLOBAL EXECUTION CONTEXT
+// • Promises are not put on a standard TASK QUEUE
+// They are put on "MICRO TASK QUEUE" - Promise Jobs
+
+// • setTimeout
+// • clearTimeout
+
+// This is still put on Micro task queue and run last even if 0ms
+// setTimeout(function () {
+//   console.log('Hello 123');
+// }, 0);
+// console.log('im first');
+
+// function changeText() {
+//   document.querySelector('h1').textContent = 'Call back is here';
+// }
+// const timerId = setTimeout(changeText, 3000);
+
+// const button = document.getElementById('cancel');
+// button.addEventListener('click', () => {
+//   clearTimeout(timerId);
+//   console.log(timerId);
+// });
