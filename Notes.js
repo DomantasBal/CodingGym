@@ -642,16 +642,12 @@
 
 // ############################################ Asynchronous JS ############################################
 // • TASK QUEUE - FIRST IN FIRST OUT (FIFO)
-// • EVENT LOOP
+// • MICRO TASK QUEUE - Executes first than TASK QUEUE (Promises)
+// • EVENT LOOP - Checks when to clear TASK QUEUES to send to CALL STACK
 // • MEMORY HEAP
-// • CALL STACK
+// • CALL STACK - Single threaded execution of JS
 // • WEB API
 // • GLOBAL EXECUTION CONTEXT
-// • Promises are not put on a standard TASK QUEUE
-// They are put on "MICRO TASK QUEUE" - Promise Jobs
-
-// • setTimeout
-// • clearTimeout
 
 // This is still put on Micro task queue and run last even if 0ms
 // setTimeout(function () {
