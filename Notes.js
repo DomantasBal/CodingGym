@@ -667,8 +667,8 @@
 // });
 
 // ################## AJAX & XHR Object (oldschool) ##################
-const xhr = new XMLHttpRequest();
-xhr.open('GET', './movies.json');
+// const xhr = new XMLHttpRequest();
+// xhr.open('GET', './movies.json');
 
 // Ready state has 5 possible values:
 // 0: - request not initialized
@@ -677,15 +677,32 @@ xhr.open('GET', './movies.json');
 // 3: - processing request
 // 4: - request finished and response is ready
 
-xhr.onreadystatechange = function () {
-  if (this.readyState === 4 && this.status === 200) {
-    const data = JSON.parse(this.responseText);
-    data.forEach((movie) => {
-      const li = document.createElement('li');
-      li.innerHTML = `<strong>${movie.title}</strong> - ${movie.year}`;
-      document.querySelector('#results').appendChild(li);
-    });
-  }
-};
+// xhr.onreadystatechange = function () {
+//   if (this.readyState === 4 && this.status === 200) {
+//     const data = JSON.parse(this.responseText);
+//     data.forEach((movie) => {
+//       const li = document.createElement('li');
+//       li.innerHTML = `<strong>${movie.title}</strong> - ${movie.year}`;
+//       document.querySelector('#results').appendChild(li);
+//     });
+//   }
+// };
 
-xhr.send();
+// xhr.send();
+
+function showJoke() {
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://api.chucknorris.io/jokes/random');
+
+  xhr.onreadystatechange = function () {
+    if (this.readyState === 4 && this.status === 200) {
+      const data = JSON.parse(this.responseText);
+      const result = document.querySelector('#results');
+      result.textContent = data.value;
+    }
+  };
+  xhr.send();
+}
+
+const button = document.getElementById('getJoke');
+button.addEventListener('click', showJoke);
