@@ -690,19 +690,55 @@
 
 // xhr.send();
 
-function showJoke() {
-  const xhr = new XMLHttpRequest();
-  xhr.open('GET', 'https://api.chucknorris.io/jokes/random');
+// function showJoke() {
+//   const xhr = new XMLHttpRequest();
+//   xhr.open('GET', 'https://api.chucknorris.io/jokes/random');
 
-  xhr.onreadystatechange = function () {
-    if (this.readyState === 4 && this.status === 200) {
-      const data = JSON.parse(this.responseText);
-      const result = document.querySelector('#results');
-      result.textContent = data.value;
-    }
-  };
-  xhr.send();
-}
+//   xhr.onreadystatechange = function () {
+//     if (this.readyState === 4 && this.status === 200) {
+//       const data = JSON.parse(this.responseText);
+//       const result = document.querySelector('#results');
+//       result.textContent = data.value;
+//     }
+//   };
+//   xhr.send();
+// }
 
-const button = document.getElementById('getJoke');
-button.addEventListener('click', showJoke);
+// const button = document.getElementById('getJoke');
+// button.addEventListener('click', showJoke);
+
+// ################## Promises ##################
+// const promise = new Promise((resolve, reject) => {
+//   // Simulates ASYNC task
+//   setTimeout(() => {
+//     console.log('async task complete');
+//     resolve();
+//   }, 1000);
+// });
+
+// promise.then(() => {
+//   console.log('promise consumed');
+// });
+
+// const getUser = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     let error = false;
+
+//     if (!error) {
+//       console.log('1. async task 2 complete');
+//       resolve({
+//         name: 'dom',
+//         age: 30,
+//       });
+//     } else {
+//       reject('2. Some err not resolved promise test');
+//     }
+//   }, 1000);
+// });
+
+// getUser
+//   .then((user) => {
+//     console.log(user);
+//   })
+//   .catch((err) => console.log(err))
+//   .finally(() => console.log('Promise has been resolved or rejected'));
