@@ -748,12 +748,12 @@
 
 // ################## Fetch, Async - Await ##################
 
-// Fetch
-fetch('./movies.json')
-  .then((response) => response.json())
-  .then((data) => console.log(data));
+// // Fetch
+// fetch('./movies.json')
+//   .then((response) => response.json())
+//   .then((data) => console.log(data));
 
-// Fetching text method
-fetch('./test.txt')
-  .then((response) => response.text())
-  .then((data) => console.log(data));
+// // Fetching text method
+// fetch('./test.txt')
+//   .then((response) => response.text())
+//   .then((data) => console.log(data));
