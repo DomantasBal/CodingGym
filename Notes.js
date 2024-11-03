@@ -708,6 +708,9 @@
 // button.addEventListener('click', showJoke);
 
 // ################## Promises ##################
+// • Promise Chaining
+// • Promise.all([promise, promise2, promise3])
+
 // const promise = new Promise((resolve, reject) => {
 //   // Simulates ASYNC task
 //   setTimeout(() => {
@@ -742,3 +745,15 @@
 //   })
 //   .catch((err) => console.log(err))
 //   .finally(() => console.log('Promise has been resolved or rejected'));
+
+// ################## Fetch, Async - Await ##################
+
+// Fetch
+fetch('./movies.json')
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+
+// Fetching text method
+fetch('./test.txt')
+  .then((response) => response.text())
+  .then((data) => console.log(data));
