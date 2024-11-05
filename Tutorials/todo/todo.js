@@ -1,7 +1,7 @@
-const apiurl = 'https://jsonplaceholder.typicode.com/todos';
+const apiUrl = 'https://jsonplaceholder.typicode.com/todos';
 
 const getTodos = () => {
-  fetch(apiurl + '?_limit=5')
+  fetch(apiUrl + '?_limit=5')
     .then((response) => response.json())
     .then((data) => data.forEach((todo) => addTodoToDOM(todo)));
 };
@@ -20,7 +20,20 @@ const addTodoToDOM = (todo) => {
 const createTodo = (e) => {
   e.preventDefault();
 
-  console.log(1);
+  const newTodo = {
+    title: e.target.firstElementChild.value,
+    completed: false,
+  };
+
+  fetch(apiUrl, {
+    method: 'POST',
+    body: JSON.stringify(newTodo),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => addTodoToDOM(data));
 };
 
 const init = () => {
