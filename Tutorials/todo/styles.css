@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui;
+  display: grid;
+  justify-content: center;
+}
+h1 {
+  text-align: center;
+  margin: 20px 0px;
+}
+
+.container {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 5px;
+  max-width: 600px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+form input {
+  height: 40px;
+  font-size: 1rem;
+  padding-left: 10px;
+  border-radius: 6px;
+  border: solid 2px black;
+  text-transform: uppercase;
+  transition: background-color 0.5s;
+}
+
+button {
+  border: 2px solid black;
+  background: none;
+  font-size: 1rem;
+  color: #000;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 6px;
+  padding: 10px 40px;
+  margin: 15px 0px;
+  transition: 0.2s background-color;
+}
+
+button:hover {
+  background-color: greenyellow;
+  cursor: pointer;
+}
+
+#todo-list {
+  margin: 30px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+#todo-list div {
+  margin: 0px 20px;
+  max-width: 300px;
+  min-width: 300px;
+  background: #101010;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+}
+#todo-list div:hover {
+  cursor: pointer;
+  background: #404040;
+}

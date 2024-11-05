@@ -16,4 +16,16 @@ const addTodoToDOM = (todo) => {
   }
   document.getElementById('todo-list').appendChild(div);
 };
-getTodos();
+
+const createTodo = (e) => {
+  e.preventDefault();
+
+  console.log(1);
+};
+
+const init = () => {
+  document.addEventListener('DOMContentLoaded', getTodos);
+  document.querySelector('#todo-form').addEventListener('submit', createTodo);
+};
+
+init();
