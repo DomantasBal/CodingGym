@@ -75,3 +75,7 @@ button:hover {
   cursor: pointer;
   background: #404040;
 }
+
+.done {
+  background: green !important;
+}
