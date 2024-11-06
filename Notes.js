@@ -778,3 +778,28 @@
 // }
 
 // createPost({ title: 'my post', body: 'body123' });
+
+// ################## Error Handling ##################
+
+fetch('https://httpstat.us/404')
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error('request failed');
+    } else {
+      return response;
+    }
+  })
+  .then(() => console.log('success'))
+  .catch((err) => {
+    console.log(err);
+  });
+
+// Catch runs on network error
+// fetch('asdsafasd4.com')
+//   .then((response) => {
+//     return response;
+//   })
+//   .then(() => console.log('success'))
+//   .catch((err) => {
+//     console.log(err);
+//   });
