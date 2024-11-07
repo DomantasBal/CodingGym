@@ -805,29 +805,91 @@
 //   });
 
 // ################## Async - Await ##################
-const promise = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve({ name: 'DOM', age: 31 });
-  }, 1000);
-});
-// promise.then((data) => console.log(data));
 
-async function getPromise() {
-  const response = await promise;
-  console.log(response);
+// const promise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve({ name: 'DOM', age: 31 });
+//   }, 1000);
+// });
+// // promise.then((data) => console.log(data));
+
+// async function getPromise() {
+//   const response = await promise;
+//   console.log(response);
+// }
+// // getPromise();
+
+// async function getUsers() {
+//   const response = await fetch('https://jsonplaceholder.typicode.com/users');
+//   const data = await response.json();
+//   console.log(data);
+// }
+// getUsers();
+
+// const getPosts = async () => {
+//   const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+//   const data = await response.json();
+//   console.log(data);
+// };
+// getPosts();
+
+// ################## Try & Catch ##################
+// try {
+//   console.log(x);
+// } catch (err) {
+//   console.log('ERROR: ' + err);
+// }
+
+// function double(number) {
+//   if (isNaN(number)) {
+//     throw new Error(number + ' -- Is not a number');
+//   }
+//   return number * 2;
+// }
+
+// try {
+//   const y = double('a');
+// } catch (err) {
+//   console.log(err);
+// }
+
+// const getUsers = async () => {
+//   try {
+//     const response = await fetch('https://jsonplaceholder.typicode.com/users');
+
+//     const data = await response.json();
+//     console.log(data);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
+
+// getUsers();
+
+async function getAllData() {
+  const movies = await fetch('/movies.json');
+  const moviesRes = await movies.json();
+
+  const actors = await fetch('/actors.json');
+  const actorsRes = await actors.json();
+
+  const directors = await fetch('/directors.json');
+  const directorsRes = await directors.json();
 }
-// getPromise();
 
-async function getUsers() {
-  const response = await fetch('https://jsonplaceholder.typicode.com/users');
-  const data = await response.json();
-  console.log(data);
+async function getAllDataPromises() {
+  const [moviesRes, actorsRes, directorsRes] = await Promise.all([
+    fetch('/movies.json'),
+    fetch('/actors.json'),
+    fetch('/directors.json'),
+  ]);
+
+  const movies = await moviesRes.json();
+  const actors = await actorsRes.json();
+  const directors = await directorsRes.json();
+
+  console.log(movies, actors, directors);
 }
-getUsers();
 
-const getPosts = async () => {
-  const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-  const data = await response.json();
-  console.log(data);
-};
-getPosts();
+getAllData();
+getAllDataPromises();
