@@ -33,7 +33,7 @@ async function displayPopularMovies() {
 // Fetch data from movies api
 async function fetchAPIData(endpoint) {
   // This is just for learning purposes, and it is a free API key so no .env file practice is needed in this case! :)
-  const API_KEY = 'cd69fbcfeb7f407c8f93aa20e779476a';
+  const API_KEY = 'cd69fbcfeb7f407c8f93aa20e779476a'; // Bad practice! I know!
   // This is just for learning purposes, and it is a free API key so no .env file practice is needed in this case! :)
 
   const API_URL = 'https://api.themoviedb.org/3/';
