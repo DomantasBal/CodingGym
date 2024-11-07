@@ -746,7 +746,7 @@
 //   .catch((err) => console.log(err))
 //   .finally(() => console.log('Promise has been resolved or rejected'));
 
-// ################## Fetch, Async - Await ##################
+// ################## Fetch ##################
 
 // // Fetch
 // fetch('./movies.json')
@@ -781,18 +781,18 @@
 
 // ################## Error Handling ##################
 
-fetch('https://httpstat.us/404')
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error('request failed');
-    } else {
-      return response;
-    }
-  })
-  .then(() => console.log('success'))
-  .catch((err) => {
-    console.log(err);
-  });
+// fetch('https://httpstat.us/404')
+//   .then((response) => {
+//     if (!response.ok) {
+//       throw new Error('request failed');
+//     } else {
+//       return response;
+//     }
+//   })
+//   .then(() => console.log('success'))
+//   .catch((err) => {
+//     console.log(err);
+//   });
 
 // Catch runs on network error
 // fetch('asdsafasd4.com')
@@ -803,3 +803,31 @@ fetch('https://httpstat.us/404')
 //   .catch((err) => {
 //     console.log(err);
 //   });
+
+// ################## Async - Await ##################
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve({ name: 'DOM', age: 31 });
+  }, 1000);
+});
+// promise.then((data) => console.log(data));
+
+async function getPromise() {
+  const response = await promise;
+  console.log(response);
+}
+// getPromise();
+
+async function getUsers() {
+  const response = await fetch('https://jsonplaceholder.typicode.com/users');
+  const data = await response.json();
+  console.log(data);
+}
+getUsers();
+
+const getPosts = async () => {
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+  const data = await response.json();
+  console.log(data);
+};
+getPosts();
