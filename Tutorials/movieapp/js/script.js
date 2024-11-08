@@ -5,8 +5,6 @@ const global = {
 async function displayPopularMovies() {
   const { results } = await fetchAPIData('movie/popular');
 
-  console.log(results);
-
   results.forEach((movie) => {
     const div = document.createElement('div');
     div.classList.add('card');
@@ -30,19 +28,56 @@ async function displayPopularMovies() {
   });
 }
 
+async function displayPopularShows() {
+  const { results } = await fetchAPIData('tv/popular');
+
+  results.forEach((show) => {
+    const div = document.createElement('div');
+    div.classList.add('card');
+    div.innerHTML = `
+          <a href="tv-details.html?id=${show.id}">
+ ${
+   show.poster_path
+     ? `<img src="https://image.tmdb.org/t/p/w500${show.poster_path}" class="card-img-top" alt="${show.name}"/>`
+     : `<img src="images/no-image.jpg" class="card-img-top" alt="${show.name}"/>`
+ }
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">${show.name}</h5>
+            <p class="card-text">
+              <small class="text-muted">Release: ${show.first_air_date}</small>
+            </p>
+          </div>
+    `;
+
+    document.querySelector('#popular-shows').appendChild(div);
+  });
+}
+
 // Fetch data from movies api
 async function fetchAPIData(endpoint) {
   // This is just for learning purposes, and it is a free API key so no .env file practice is needed in this case! :)
   const API_KEY = 'cd69fbcfeb7f407c8f93aa20e779476a'; // Bad practice! I know!
   // This is just for learning purposes, and it is a free API key so no .env file practice is needed in this case! :)
-
   const API_URL = 'https://api.themoviedb.org/3/';
+
+  showSpinner();
   const response = await fetch(
     `${API_URL}${endpoint}?api_key=${API_KEY}&language=en-US`
   );
 
   const data = await response.json();
+  hideSpinner();
   return data;
+}
+
+// Show spinner
+function showSpinner() {
+  document.querySelector('.spinner').classList.add('show');
+}
+// Hide spinner
+function hideSpinner() {
+  document.querySelector('.spinner').classList.remove('show');
 }
 
 // Highlight active link
@@ -66,7 +101,7 @@ function init() {
       break;
 
     case '/shows.html':
-      console.log('shows');
+      displayPopularShows();
       break;
 
     case '/movie-details.html':
