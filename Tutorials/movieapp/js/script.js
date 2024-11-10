@@ -1,5 +1,17 @@
 const global = {
   currentPage: window.location.pathname,
+  search: {
+    term: '',
+    type: '',
+    page: 1,
+    totalPages: 1,
+  },
+  api: {
+    // This is just for learning purposes, and it is a free API key so no .env file practice is needed in this case! :)
+    key: 'cd69fbcfeb7f407c8f93aa20e779476a', // Bad practice! I know!
+    url: 'https://api.themoviedb.org/3/', // Bad practice! I know!
+    // This is just for learning purposes, and it is a free API key so no .env file practice is needed in this case! :)
+  },
 };
 
 async function displayPopularMovies() {
@@ -172,10 +184,8 @@ async function displayShowDetails() {
 
 // Fetch data from movies api
 async function fetchAPIData(endpoint) {
-  // This is just for learning purposes, and it is a free API key so no .env file practice is needed in this case! :)
-  const API_KEY = 'cd69fbcfeb7f407c8f93aa20e779476a'; // Bad practice! I know!
-  // This is just for learning purposes, and it is a free API key so no .env file practice is needed in this case! :)
-  const API_URL = 'https://api.themoviedb.org/3/';
+  const API_URL = global.api.url;
+  const API_KEY = global.api.key;
 
   showSpinner();
   const response = await fetch(
@@ -185,6 +195,76 @@ async function fetchAPIData(endpoint) {
   const data = await response.json();
   hideSpinner();
   return data;
+}
+
+// Make request to search
+async function searchApiData() {
+  const API_URL = global.api.url;
+  const API_KEY = global.api.key;
+
+  showSpinner();
+  const response = await fetch(
+    `${API_URL}search/${global.search.type}?api_key=${API_KEY}&language=en-US&query=${global.search.term}`
+  );
+
+  const data = await response.json();
+  hideSpinner();
+  return data;
+}
+
+async function search() {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  global.search.type = urlParams.get('type');
+  global.search.term = urlParams.get('search-term');
+
+  if (global.search.term !== '' && global.search.term !== null) {
+    const { results, totalPages, page } = await searchApiData();
+    if (results.length === 0) {
+      showAlert('Sorry, no results found');
+      return;
+    }
+    displaySearchResults(results);
+    document.querySelector('#search-term').value = '';
+  } else {
+    showAlert('Please enter search text');
+  }
+}
+
+function displaySearchResults(results) {
+  results.forEach((result) => {
+    const div = document.createElement('div');
+    div.classList.add('card');
+    div.innerHTML = `
+          <a href="${global.search.type}-details.html?id=${result.id}">
+ ${
+   result.poster_path
+     ? `<img src="https://image.tmdb.org/t/p/w500${
+         result.poster_path
+       }" class="card-img-top" alt="${
+         global.search.type === 'movie' ? result.title : result.name
+       }"/>`
+     : `<img src="images/no-image.jpg" class="card-img-top" alt="${
+         global.search.type === 'movie' ? result.title : result.name
+       }"/>`
+ }
+          </a>
+          <div class="card-body">
+            <h5 class="card-title">${
+              global.search.type === 'movie' ? result.title : result.name
+            }</h5>
+            <p class="card-text">
+              <small class="text-muted">Release: ${
+                global.search.type === 'movie'
+                  ? result.release_date
+                  : result.first_air_date
+              }</small>
+            </p>
+          </div>
+    `;
+
+    document.querySelector('#search-results').appendChild(div);
+  });
 }
 
 async function displaySlider() {
@@ -264,6 +344,17 @@ function hideSpinner() {
   document.querySelector('.spinner').classList.remove('show');
 }
 
+function showAlert(message, className) {
+  const alertEl = document.createElement('div');
+  alertEl.classList.add('alert', className);
+  alertEl.appendChild(document.createTextNode(message));
+  document.querySelector('#alert').appendChild(alertEl);
+
+  setTimeout(() => {
+    alertEl.remove();
+  }, 3000);
+}
+
 function addCommasToNumber(number) {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
@@ -300,8 +391,8 @@ function init() {
       displayShowDetails();
       break;
 
-    case 'search.html':
-      console.log('search');
+    case '/search.html':
+      search();
       break;
   }
 

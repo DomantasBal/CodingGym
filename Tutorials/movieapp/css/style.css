@@ -124,6 +124,7 @@ ul {
 .card {
   background: #04376b;
   padding: 5px;
+  max-width: 300px;
 }
 
 .card img {
@@ -334,7 +335,7 @@ section h2 {
   border-radius: 5px;
 }
 
-.alert-success {
+.success {
   background: green;
 }
 
