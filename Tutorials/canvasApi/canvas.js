@@ -24,3 +24,7 @@ ctx.fillStyle = 'orange';
 ctx.lineWidth = 1;
 ctx.fillText('HELLO', 200, 100, 500);
 ctx.strokeText('HELLO', 300, 300, 500);
+
+const ball = document.getElementById('ball');
+ball.style.display = 'none';
+ball.addEventListener('load', () => ctx.drawImage(ball, 150, 150, 100, 100));
