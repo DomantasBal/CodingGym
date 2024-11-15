@@ -1,8 +1,8 @@
-// MAP Library
-// https://leafletjs.com/
+// // MAP Library
+// //leafletjs.com/
 
 // // get currrent position
-// function currentSuccess(position) {
+// https: function currentSuccess(position) {
 //   const { latitude, longitude, accuracy } = position.coords;
 //   console.log(`${latitude} - ${longitude} Accuracy: ${accuracy}m.`);
 // }
@@ -56,18 +56,18 @@
 //   watchOptions
 // );
 
-const map = L.map('map').setView([0, 0], 13);
+// const map = L.map('map').setView([0, 0], 13);
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution:
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-}).addTo(map);
+// L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//   attribution:
+//     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+// }).addTo(map);
 
-const marker = L.marker([0, 0]).addTo(map);
+// const marker = L.marker([0, 0]).addTo(map);
 
-navigator.geolocation.getCurrentPosition((position) => {
-  const { latitude, longitude } = position.coords;
-  marker.setLatLng([latitude, longitude]).update();
-  map.setView([latitude, longitude], 18);
-  marker.bindPopup('<h1> YOU ARE HERE</h1>');
-});
+// navigator.geolocation.getCurrentPosition((position) => {
+//   const { latitude, longitude } = position.coords;
+//   marker.setLatLng([latitude, longitude]).update();
+//   map.setView([latitude, longitude], 18);
+//   marker.bindPopup('<h1> YOU ARE HERE</h1>');
+// });
