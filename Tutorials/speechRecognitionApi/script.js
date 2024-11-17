@@ -7,12 +7,19 @@ const rec = new SpeechRecognition();
 
 rec.lang = 'en-US';
 
-rec.continuous = false;
+rec.continuous = true;
 
 rec.onresult = function (e) {
-  //   console.log(e.results[0][0].transcript);
+  const acceptedColors = ['red', 'green', 'blue'];
 
-  text.innerText = e.results[0][0].transcript;
+  for (let i = e.resultIndex; i < e.results.length; i++) {
+    const script = e.results[i][0].transcript.toLowerCase().trim();
+    if (acceptedColors.includes(script)) {
+      document.body.style.backgroundColor = script;
+    } else {
+      alert('Please say correct color');
+    }
+  }
 };
 
 rec.start();
