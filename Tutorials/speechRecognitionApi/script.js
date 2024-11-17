@@ -14,11 +14,9 @@ rec.onresult = function (e) {
 
   for (let i = e.resultIndex; i < e.results.length; i++) {
     const script = e.results[i][0].transcript.toLowerCase().trim();
-    if (acceptedColors.includes(script)) {
-      document.body.style.backgroundColor = script;
-    } else {
-      alert('Please say correct color');
-    }
+    acceptedColors.includes(script)
+      ? (document.body.style.backgroundColor = script)
+      : alert('Please say correct color');
   }
 };
 
