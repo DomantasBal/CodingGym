@@ -897,54 +897,150 @@
 // ########################################### OOP ###########################################
 
 // Constructor Function
-function Shape(name, width, height) {
-  this.name = name;
-  this.width = width;
-  this.height = height;
-  this.area = () => this.width * this.height;
+// function Shape(name, width, height) {
+//   this.name = name;
+//   this.width = width;
+//   this.height = height;
+//   this.area = () => this.width * this.height;
+// }
+
+// const shape1 = new Shape('square 1', 100, 100);
+// const shape2 = new Shape('rectangle', 120, 100);
+
+// console.log(shape2.area());
+// console.log(shape1.constructor);
+// console.log(shape2 instanceof Shape); // true
+
+// ################## Boxing & Unboxing ##################
+// const strLit = 'HELLO';
+// const strObj = new String('HELLO');
+
+// console.log(strLit, typeof strLit);
+// console.log(strObj, typeof strObj);
+
+// // Boxing - adds the wrapper object onto a literal
+// console.log(strLit.toUpperCase());
+// console.log(strLit[0]);
+
+// // Unboxing - Object is turned back into literal
+// console.log(strObj.valueOf(), typeof strObj);
+// console.log(strLit.constructor);
+// console.log(strObj.constructor);
+
+// console.log(strLit instanceof String);
+// console.log(strObj instanceof String);
+
+// // Other types
+// const numLit = 20;
+// const numObj = new Number(20);
+
+// console.log(numLit, typeof numLit);
+// console.log(numObj, typeof numObj);
+
+// const boolLit = true;
+// const boolObj = new Boolean(boolObj);
+
+// console.log(boolLit, typeof boolLit);
+// console.log(boolObj, typeof boolObj);
+
+// const arrLit = [1, 2, 3, 4, 5];
+// const arrObj = new Array(1, 2, 3, 4, 5);
+
+// console.log(arrLit, typeof arrLit);
+// console.log(arrObj, typeof arrObj);
+
+// const funcLit = function (x) {
+//   return x * x;
+// };
+// console.log(funcLit, typeof funcLit);
+// console.log(funcLit(5));
+
+// const funcObj = new Function('x', 'return x*x'); //weird
+// console.log(funcObj(3));
+
+// const obj1 = {};
+// const obj2 = new Object();
+// console.log(obj1, typeof obj1);
+// console.log(obj2, typeof obj2);
+
+// ################## Object Properties ##################
+// function Rectangle(name, width, height) {
+//   this.name = name;
+//   this.width = width;
+//   this.height = height;
+//   this.area = () => this.width * this.height;
+// }
+// const rec1 = new Rectangle('rectangle1', 400, 200);
+
+// • hasOwnProperty()
+// console.log(rec1.hasOwnProperty('name'));
+
+// • Object.keys()
+// console.log(Object.keys(rec1));
+
+// • Object.values();
+// console.log(Object.values(rec1));
+
+// • Object.entries();
+// console.log(Object.entries(rec1));
+
+// logs key value pairs
+// for (let [key, value] of Object.entries(rec1)) {
+//   if (typeof value !== 'function') {
+//     console.log(`${key} = ${value}`);
+//   }
+// }
+
+// ################## Prototypes ##################
+// function Rectangle(name, width, height) {
+//   this.name = name;
+//   this.width = width;
+//   this.height = height;
+// }
+
+// // adds function to the prototype
+// Rectangle.prototype.area = function () {
+//   return this.width * this.height;
+// };
+
+// Rectangle.prototype.perimeter = function () {
+//   return 2 * (this.width + this.height);
+// };
+
+// Rectangle.prototype.isSquare = function () {
+//   return this.width === this.height;
+// };
+
+// const rec1 = new Rectangle('rectangle1', 10, 10);
+// console.log(rec1.area());
+
+// const rec2 = new Rectangle('rectangle2', 20, 20);
+// console.log(rec2.area());
+
+// other way of creating prototypes
+const rectanglePrototypes = {
+  area: function () {
+    return this.width * this.height;
+  },
+  perimeter: function () {
+    return 2 * (this.width + this.height);
+  },
+  isSquare: function () {
+    return this.height === this.width;
+  },
+};
+
+function createRectangle(height, width) {
+  return Object.create(rectanglePrototypes, {
+    height: {
+      value: height,
+    },
+    width: {
+      value: width,
+    },
+  });
 }
 
-const shape1 = new Shape('square 1', 100, 100);
-const shape2 = new Shape('rectangle', 120, 100);
+const rect = createRectangle(10, 20);
 
-console.log(shape2.area());
-console.log(shape1.constructor);
-console.log(shape2 instanceof Shape); // true
-
-// Boxing & Unboxing in js
-const strLit = 'HELLO';
-const strObj = new String('HELLO');
-
-console.log(strLit, typeof strLit);
-console.log(strObj, typeof strObj);
-
-// Boxing - adds the wrapper object onto a literal
-console.log(strLit.toUpperCase());
-console.log(strLit[0]);
-
-// Unboxing - Object is turned back into literal
-console.log(strObj.valueOf(), typeof strObj);
-console.log(strLit.constructor);
-console.log(strObj.constructor);
-
-console.log(strLit instanceof String);
-console.log(strObj instanceof String);
-
-// Other types
-const numLit = 20;
-const numObj = new Number(20);
-
-console.log(numLit, typeof numLit);
-console.log(numObj, typeof numObj);
-
-const boolLit = true;
-const boolObj = new Boolean(boolObj);
-
-console.log(boolLit, typeof boolLit);
-console.log(boolObj, typeof boolObj);
-
-const arrLit = [1, 2, 3, 4, 5];
-const arrObj = new Array(1, 2, 3, 4, 5);
-
-console.log(arrLit, typeof arrLit);
-console.log(arrObj, typeof arrObj);
+console.log(rect.area());
