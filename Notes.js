@@ -1083,30 +1083,48 @@
 
 // ################## Classes ##################
 
-class Rectangle {
-  constructor(name, width, height) {
+// class Rectangle {
+//   constructor(name, width, height) {
+//     this.name = name;
+//     this.width = width;
+//     this.height = height;
+//   }
+
+//   area() {
+//     return this.height * this.width;
+//   }
+
+//   perimeter() {
+//     return 2 * (this.width + this.height);
+//   }
+
+//   isSquare() {
+//     return this.width === this.height;
+//   }
+
+//   logArea() {
+//     console.log(`Rectangle Area: ${this.area()}`);
+//   }
+// }
+
+// const square = new Rectangle('Square', 20, 20);
+
+// square.logArea();
+
+// ################## Class Inheritance ##################
+class Shape {
+  constructor(name) {
     this.name = name;
-    this.width = width;
-    this.height = height;
-  }
-
-  area() {
-    return this.height * this.width;
-  }
-
-  perimeter() {
-    return 2 * (this.width + this.height);
-  }
-
-  isSquare() {
-    return this.width === this.height;
-  }
-
-  logArea() {
-    console.log(`Rectangle Area: ${this.area()}`);
   }
 }
 
-const square = new Rectangle('Square', 20, 20);
+class Rectangle extends Shape {
+  constructor(name, width, height) {
+    super(name); // calls constructor of parent class
+    this.height = height;
+    this.width = width;
+  }
+}
 
-square.logArea();
+const rect = new Rectangle('rect1', 20, 20);
+console.log(rect);
