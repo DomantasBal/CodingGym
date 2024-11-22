@@ -1112,12 +1112,19 @@
 // square.logArea();
 
 // ################## Class Inheritance ##################
+
+// Parent class
 class Shape {
   constructor(name) {
     this.name = name;
   }
+
+  logName() {
+    console.log('Shape Name: ' + this.name);
+  }
 }
 
+// Sub class
 class Rectangle extends Shape {
   constructor(name, width, height) {
     super(name); // calls constructor of parent class
@@ -1126,5 +1133,22 @@ class Rectangle extends Shape {
   }
 }
 
+class Circle extends Shape {
+  constructor(name, radius) {
+    super(name);
+    this.radius = radius;
+  }
+
+  logName() {
+    console.log('Circle Name: ' + this.name); //Polymorphism
+  }
+}
+
 const rect = new Rectangle('rect1', 20, 20);
 console.log(rect);
+rect.logName();
+const cir = new Circle('circle 1', 33);
+cir.logName();
+
+console.log(rect instanceof Rectangle);
+console.log(rect instanceof Shape);
