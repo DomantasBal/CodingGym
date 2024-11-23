@@ -1113,42 +1113,101 @@
 
 // ################## Class Inheritance ##################
 
-// Parent class
-class Shape {
-  constructor(name) {
-    this.name = name;
-  }
+// // Parent class
+// class Shape {
+//   constructor(name) {
+//     this.name = name;
+//   }
 
-  logName() {
-    console.log('Shape Name: ' + this.name);
-  }
-}
+//   logName() {
+//     console.log('Shape Name: ' + this.name);
+//   }
+// }
 
-// Sub class
-class Rectangle extends Shape {
-  constructor(name, width, height) {
-    super(name); // calls constructor of parent class
-    this.height = height;
-    this.width = width;
-  }
-}
+// // Sub class
+// class Rectangle extends Shape {
+//   constructor(name, width, height) {
+//     super(name); // calls constructor of parent class
+//     this.height = height;
+//     this.width = width;
+//   }
+// }
 
-class Circle extends Shape {
-  constructor(name, radius) {
-    super(name);
-    this.radius = radius;
-  }
+// class Circle extends Shape {
+//   constructor(name, radius) {
+//     super(name);
+//     this.radius = radius;
+//   }
 
-  logName() {
-    console.log('Circle Name: ' + this.name); //Polymorphism
-  }
-}
+//   logName() {
+//     console.log('Circle Name: ' + this.name); //Polymorphism
+//   }
+// }
 
-const rect = new Rectangle('rect1', 20, 20);
-console.log(rect);
-rect.logName();
-const cir = new Circle('circle 1', 33);
-cir.logName();
+// const rect = new Rectangle('rect1', 20, 20);
+// console.log(rect);
+// rect.logName();
+// const cir = new Circle('circle 1', 33);
+// cir.logName();
 
-console.log(rect instanceof Rectangle);
-console.log(rect instanceof Shape);
+// console.log(rect instanceof Rectangle);
+// console.log(rect instanceof Shape);
+
+// ################## Static Methods ##################
+
+// class Rectangle {
+//   constructor(name, width, height) {
+//     this.name = name;
+//     this.width = width;
+//     this.height = height;
+//   }
+
+//   area() {
+//     return this.height * this.width;
+//   }
+
+//   static getClass() {
+//     return 'Rectangle';
+//   }
+// }
+
+// const rect = new Rectangle('rect1', 20, 30);
+// console.log(rect.area());
+// console.log(Rectangle.getClass());
+
+// class App {
+//   constructor() {
+//     this.servername = 'localhost';
+//     document
+//       .querySelector('button')
+//       .addEventListener('click', this.getServerName.bind(this));
+//   }
+//   getServerName() {
+//     console.log(this.servername);
+//   }
+// }
+
+// const app = new App();
+// app.getServerName();
+
+// ################## Getters & Setters ##################
+// class Person {
+//   constructor(firstName, lastName) {
+//     this._firstName = firstName;
+//     this._lastName = lastName;
+//   }
+
+//   get firstName() {
+//     return this._firstName.charAt(0).toUpperCase() + this._firstName.slice(1);
+//   }
+
+//   set firstName(value) {
+//     this._firstName = value.charAt(0).toUpperCase() + value.slice(1);
+//   }
+// }
+
+// const person1 = new Person('john', 'cena');
+// console.log(person1.firstName);
+
+// person1.firstName = 'dom';
+// console.log(person1.firstName);
