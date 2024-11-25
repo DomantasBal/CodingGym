@@ -1247,53 +1247,53 @@
 
 // ################## Private Property ##################
 
-class Wallet {
-  constructor() {
-    this._balance = 0;
-    this._transactions = [];
-  }
+// class Wallet {
+//   constructor() {
+//     this._balance = 0;
+//     this._transactions = [];
+//   }
 
-  deposit(amount) {
-    this._processDeposit(amount);
-    this._balance += amount;
-  }
+//   deposit(amount) {
+//     this._processDeposit(amount);
+//     this._balance += amount;
+//   }
 
-  widthdraw(amount) {
-    if (amount > this.balance) {
-      console.log('No money');
-      return;
-    }
-    this._processWidthdraw(amount);
-    this._balance -= amount;
-  }
+//   widthdraw(amount) {
+//     if (amount > this.balance) {
+//       console.log('No money');
+//       return;
+//     }
+//     this._processWidthdraw(amount);
+//     this._balance -= amount;
+//   }
 
-  _processDeposit(amount) {
-    console.log(`Depositing ${amount}`);
-    this._transactions.push({
-      type: 'Deposit',
-      amount,
-    });
-  }
-  _processWidthdraw(amount) {
-    console.log(`Widthdrawing ${amount}`);
-    this._transactions.push({
-      type: 'Widthdraw',
-      amount,
-    });
-  }
+//   _processDeposit(amount) {
+//     console.log(`Depositing ${amount}`);
+//     this._transactions.push({
+//       type: 'Deposit',
+//       amount,
+//     });
+//   }
+//   _processWidthdraw(amount) {
+//     console.log(`Widthdrawing ${amount}`);
+//     this._transactions.push({
+//       type: 'Widthdraw',
+//       amount,
+//     });
+//   }
 
-  get balance() {
-    return this._balance;
-  }
+//   get balance() {
+//     return this._balance;
+//   }
 
-  get transactions() {
-    return this._transactions;
-  }
-}
+//   get transactions() {
+//     return this._transactions;
+//   }
+// }
 
-const wallet = new Wallet();
-wallet.deposit(300);
-wallet.widthdraw(240);
+// const wallet = new Wallet();
+// wallet.deposit(300);
+// wallet.widthdraw(240);
 
-console.log(wallet.balance);
-console.log(wallet.transactions);
+// console.log(wallet.balance);
+// console.log(wallet.transactions);
