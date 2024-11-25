@@ -1213,34 +1213,87 @@
 // console.log(person1.firstName);
 
 // in Constructor Functions
-function Person(firstName, lastName) {
-  this._firstName = firstName;
-  this._lastName = lastName;
+// function Person(firstName, lastName) {
+//   this._firstName = firstName;
+//   this._lastName = lastName;
 
-  Object.defineProperty(this, 'firstName', {
-    get: function () {
-      return this.capitalizeFirst(this._firstName);
-    },
-    set: function () {
-      this._firstName;
-    },
-  });
+//   Object.defineProperty(this, 'firstName', {
+//     get: function () {
+//       return this.capitalizeFirst(this._firstName);
+//     },
+//     set: function () {
+//       this._firstName;
+//     },
+//   });
 
-  Object.defineProperty(this, 'lastName', {
-    get: function () {
-      return this.capitalizeFirst(this._lastName);
-    },
-    set: function () {
-      this._lastName;
-    },
-  });
+//   Object.defineProperty(this, 'lastName', {
+//     get: function () {
+//       return this.capitalizeFirst(this._lastName);
+//     },
+//     set: function () {
+//       this._lastName;
+//     },
+//   });
+// }
+
+// Person.prototype.capitalizeFirst = function (value) {
+//   return value.charAt(0).toUpperCase() + value.slice(1);
+// };
+
+// const person1 = new Person('Dom', 'bal');
+
+// console.log(person1.firstName);
+// console.log(person1.lastName);
+
+// ################## Private Property ##################
+
+class Wallet {
+  constructor() {
+    this._balance = 0;
+    this._transactions = [];
+  }
+
+  deposit(amount) {
+    this._processDeposit(amount);
+    this._balance += amount;
+  }
+
+  widthdraw(amount) {
+    if (amount > this.balance) {
+      console.log('No money');
+      return;
+    }
+    this._processWidthdraw(amount);
+    this._balance -= amount;
+  }
+
+  _processDeposit(amount) {
+    console.log(`Depositing ${amount}`);
+    this._transactions.push({
+      type: 'Deposit',
+      amount,
+    });
+  }
+  _processWidthdraw(amount) {
+    console.log(`Widthdrawing ${amount}`);
+    this._transactions.push({
+      type: 'Widthdraw',
+      amount,
+    });
+  }
+
+  get balance() {
+    return this._balance;
+  }
+
+  get transactions() {
+    return this._transactions;
+  }
 }
 
-Person.prototype.capitalizeFirst = function (value) {
-  return value.charAt(0).toUpperCase() + value.slice(1);
-};
+const wallet = new Wallet();
+wallet.deposit(300);
+wallet.widthdraw(240);
 
-const person1 = new Person('Dom', 'bal');
-
-console.log(person1.firstName);
-console.log(person1.lastName);
+console.log(wallet.balance);
+console.log(wallet.transactions);
