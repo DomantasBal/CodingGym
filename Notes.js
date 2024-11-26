@@ -1251,48 +1251,50 @@
 
 // • # is ES2022 for private property and methods
 
-class Wallet {
-  #balance = 0;
-  #transactions = [];
+// class Wallet {
+//   #balance = 0;
+//   #transactions = [];
 
-  deposit(amount) {
-    this.#processDeposit(amount);
-    this.#balance += amount;
-  }
+//   deposit(amount) {
+//     this.#processDeposit(amount);
+//     this.#balance += amount;
+//   }
 
-  widthdraw(amount) {
-    if (amount > this.#balance) {
-      console.log('No money');
-      return;
-    }
-    this.#processWidthdraw(amount);
-    this.#balance -= amount;
-  }
+//   widthdraw(amount) {
+//     if (amount > this.#balance) {
+//       console.log('No money');
+//       return;
+//     }
+//     this.#processWidthdraw(amount);
+//     this.#balance -= amount;
+//   }
 
-  #processDeposit(amount) {
-    console.log(`Depositing ${amount}`);
-    this.#transactions.push({
-      type: 'Deposit',
-      amount,
-    });
-  }
-  #processWidthdraw(amount) {
-    console.log(`Widthdrawing ${amount}`);
-    this.#transactions.push({
-      type: 'Widthdraw',
-      amount,
-    });
-  }
+//   #processDeposit(amount) {
+//     console.log(`Depositing ${amount}`);
+//     this.#transactions.push({
+//       type: 'Deposit',
+//       amount,
+//     });
+//   }
+//   #processWidthdraw(amount) {
+//     console.log(`Widthdrawing ${amount}`);
+//     this.#transactions.push({
+//       type: 'Widthdraw',
+//       amount,
+//     });
+//   }
 
-  get balance() {
-    return this.#balance;
-  }
+//   get balance() {
+//     return this.#balance;
+//   }
 
-  get transactions() {
-    return this.#transactions;
-  }
-}
+//   get transactions() {
+//     return this.#transactions;
+//   }
+// }
 
-const wallet = new Wallet();
-wallet.deposit(200);
-console.log(wallet.balance);
+// const wallet = new Wallet();
+// wallet.deposit(200);
+// console.log(wallet.balance);
+
+// ################## Property Flags & Descriptors ##################
