@@ -1247,53 +1247,52 @@
 
 // ################## Private Property ##################
 
-// class Wallet {
-//   constructor() {
-//     this._balance = 0;
-//     this._transactions = [];
-//   }
+// • _property or _method - underscore is an old private method or private property convention
 
-//   deposit(amount) {
-//     this._processDeposit(amount);
-//     this._balance += amount;
-//   }
+// • # is ES2022 for private property and methods
 
-//   widthdraw(amount) {
-//     if (amount > this.balance) {
-//       console.log('No money');
-//       return;
-//     }
-//     this._processWidthdraw(amount);
-//     this._balance -= amount;
-//   }
+class Wallet {
+  #balance = 0;
+  #transactions = [];
 
-//   _processDeposit(amount) {
-//     console.log(`Depositing ${amount}`);
-//     this._transactions.push({
-//       type: 'Deposit',
-//       amount,
-//     });
-//   }
-//   _processWidthdraw(amount) {
-//     console.log(`Widthdrawing ${amount}`);
-//     this._transactions.push({
-//       type: 'Widthdraw',
-//       amount,
-//     });
-//   }
+  deposit(amount) {
+    this.#processDeposit(amount);
+    this.#balance += amount;
+  }
 
-//   get balance() {
-//     return this._balance;
-//   }
+  widthdraw(amount) {
+    if (amount > this.#balance) {
+      console.log('No money');
+      return;
+    }
+    this.#processWidthdraw(amount);
+    this.#balance -= amount;
+  }
 
-//   get transactions() {
-//     return this._transactions;
-//   }
-// }
+  #processDeposit(amount) {
+    console.log(`Depositing ${amount}`);
+    this.#transactions.push({
+      type: 'Deposit',
+      amount,
+    });
+  }
+  #processWidthdraw(amount) {
+    console.log(`Widthdrawing ${amount}`);
+    this.#transactions.push({
+      type: 'Widthdraw',
+      amount,
+    });
+  }
 
-// const wallet = new Wallet();
-// wallet.deposit(300);
-// wallet.widthdraw(240);
+  get balance() {
+    return this.#balance;
+  }
 
-// console.log(wallet.balance);
-// console.log(wallet.transactions);
+  get transactions() {
+    return this.#transactions;
+  }
+}
+
+const wallet = new Wallet();
+wallet.deposit(200);
+console.log(wallet.balance);
