@@ -1298,3 +1298,33 @@
 // console.log(wallet.balance);
 
 // ################## Property Flags & Descriptors ##################
+//  • Value
+//  • Writable
+//  • Enumerable
+//  • Configurable
+
+// console.log(Math.PI);
+// Math.PI = 4;
+
+// let descriptor = Object.getOwnPropertyDescriptor(Math, 'PI');
+// console.log(descriptor);
+
+// const rectObj = {
+//   name: 'Rectangle',
+//   width: 10,
+//   height: 10,
+// };
+
+// Object.defineProperty(rectObj, 'name', {
+//   writable: false,
+//   configurable: false,
+//   enumerable: false,
+// });
+
+// descriptor = Object.getOwnPropertyDescriptor(rectObj, 'name');
+// // console.log(descriptor);
+
+// rectObj.name = 'NEW NAME';
+// delete rectObj.name;
+// delete rectObj.width;
+// console.log(rectObj);
