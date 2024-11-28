@@ -1328,3 +1328,42 @@
 // delete rectObj.name;
 // delete rectObj.width;
 // console.log(rectObj);
+
+// ################## Sealing & Freezing Objects ##################
+// • Object.seal() - can edit existing properties
+// • Object.freeze()
+// • Object.isSealed()
+// • Object.Frozen()
+
+const rectObject = {
+  name: 'Rectangle',
+  width: 10,
+  height: 10,
+};
+
+Object.seal(rectObject);
+
+// let descriptors = Object.getOwnPropertyDescriptors(rectObject);
+
+rectObject.color = 'red';
+delete rectObject.name;
+
+rectObject.width = 20;
+
+const circleObject = {
+  name: 'circle 1',
+  radius: 20,
+};
+
+Object.freeze(circleObject);
+
+let discriptor = Object.getOwnPropertyDescriptors(circleObject);
+
+circleObject.color = 'blue';
+delete circleObject.name;
+
+circleObject.name = 'New name';
+console.log(discriptor);
+
+console.log('rectObject is sealed', Object.isSealed(rectObject));
+console.log('rectObject is sealed', Object.isFrozen(circleObject));
