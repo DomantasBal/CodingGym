@@ -8,6 +8,10 @@ class CalorieTracker {
     // Render
     this._displayCaloriesLimit();
     this._displayCaloriesTotal();
+    this._displayCaloriesConsumed();
+    this._displayCaloriesBurned();
+    this._displayCaloriesRemaining();
+    this._displayCaloriesProgress();
   }
 
   // Public Methods
@@ -26,16 +30,59 @@ class CalorieTracker {
   // Private Methods
   _displayCaloriesTotal() {
     const totalCaloriesEl = document.getElementById('calories-total');
-    totalCaloriesEl.innerHTML = this._totalCalories;
+    if (totalCaloriesEl) {
+      totalCaloriesEl.innerHTML = this._totalCalories;
+    }
   }
 
   _displayCaloriesLimit() {
     const calorieLimitEl = document.getElementById('calories-limit');
-    calorieLimitEl.innerHTML = this._calorieLimit;
+    if (calorieLimitEl) {
+      calorieLimitEl.innerHTML = this._calorieLimit;
+    }
+  }
+
+  _displayCaloriesConsumed() {
+    const caloriesConsumedEl = document.getElementById('calories-consumed');
+
+    const consumed = this._meals.reduce(
+      (total, meal) => total + meal.calories,
+      0
+    );
+
+    if (caloriesConsumedEl) {
+      caloriesConsumedEl.innerHTML = consumed;
+    }
+  }
+
+  _displayCaloriesBurned() {
+    const caloriesBurnedEl = document.getElementById('calories-burned');
+
+    const burned = this._workouts.reduce(
+      (total, workout) => total + workout.calories,
+      0
+    );
+  }
+
+  _displayCaloriesRemaining() {
+    const caloriesRemaining = document.getElementById('calories-remaining');
+    const remaining = this._calorieLimit - this._totalCalories;
+    caloriesRemaining.innerHTML = remaining;
+  }
+
+  _displayCaloriesProgress() {
+    const progressEl = document.getElementById('calorie-progress');
+    const percentage = (this._totalCalories / this._calorieLimit) * 100;
+    const width = Math.min(percentage, 100);
+    progressEl.style.width = `${width}%`;
   }
 
   _render() {
     this._displayCaloriesTotal();
+    this._displayCaloriesConsumed();
+    this._displayCaloriesBurned();
+    this._displayCaloriesRemaining();
+    this._displayCaloriesProgress();
   }
 }
 
@@ -55,15 +102,11 @@ class Workout {
   }
 }
 
+// Usage example
 const tracker = new CalorieTracker();
-const breakfast = new Meal('breakfast', 400);
-const lunch = new Meal('Lunch', 350);
+const breakfast = new Meal('Breakfast', 400);
+const lunch = new Meal('Lunch', 320);
 tracker.addMeal(breakfast);
-tracker.addMeal(lunch);
 
-const run = new Workout('Morning run', 300);
+const run = new Workout('Morning run', 320);
 tracker.addWorkout(run);
-
-console.log(tracker._meals);
-console.log(tracker._workouts);
-console.log(tracker._totalCalories);
