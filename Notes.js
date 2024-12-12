@@ -1367,3 +1367,25 @@
 
 // console.log('rectObject is sealed', Object.isSealed(rectObject));
 // console.log('rectObject is sealed', Object.isFrozen(circleObject));
+
+// ################## Symbol ##################
+
+const sym = Symbol();
+const sym1 = Symbol('foo');
+const sym2 = Symbol('bar');
+
+console.log(sym, sym1, sym2);
+console.log(typeof sym);
+console.log(sym.description);
+console.log(sym1.description);
+
+console.log(Symbol('sym') === Symbol('sym'));
+
+const user = {
+  [Symbol('id')]: 1,
+  name: 'Joe',
+  email: 'joe@email.com',
+};
+
+user.id = 123; // Just adds another property cant change symbol id
+// Symbols are NOT enumerable
