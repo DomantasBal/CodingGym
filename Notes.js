@@ -1370,31 +1370,33 @@
 
 // ################## Symbol ##################
 
-const sym = Symbol();
-const sym1 = Symbol('foo');
-const sym2 = Symbol('bar');
+// const sym = Symbol();
+// const sym1 = Symbol('foo');
+// const sym2 = Symbol('bar');
 
-console.log(sym, sym1, sym2);
-console.log(typeof sym);
-console.log(sym.description);
-console.log(sym1.description);
+// console.log(sym, sym1, sym2);
+// console.log(typeof sym);
+// console.log(sym.description);
+// console.log(sym1.description);
 
-console.log(Symbol('sym') === Symbol('sym'));
+// console.log(Symbol('sym') === Symbol('sym'));
 
-const user = {
-  [Symbol('id')]: 1,
-  name: 'Joe',
-  email: 'joe@email.com',
-};
+// const user = {
+//   [Symbol('id')]: 1,
+//   name: 'Joe',
+//   email: 'joe@email.com',
+// };
 
-user.id = 123; // Just adds another property cant change symbol id
-// Symbols are NOT enumerable
+// user.id = 123; // Just adds another property cant change symbol id
+// // Symbols are NOT enumerable
 
-// getOwnPropertySymbols
-console.log(Object.getOwnPropertySymbols(user));
+// // getOwnPropertySymbols
+// console.log(Object.getOwnPropertySymbols(user));
 
-// Symbol.for()
-const sym3 = Symbol.for('foo');
-const sym4 = Symbol.for('foo');
+// // Symbol.for()
+// const sym3 = Symbol.for('foo');
+// const sym4 = Symbol.for('foo');
 
-console.log(sym3 === sym4);
+// console.log(sym3 === sym4);
+// Symbol.keyFor(sym3);
+// Symbol.keyFor(sym1);
