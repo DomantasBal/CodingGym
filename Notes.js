@@ -1389,3 +1389,12 @@ const user = {
 
 user.id = 123; // Just adds another property cant change symbol id
 // Symbols are NOT enumerable
+
+// getOwnPropertySymbols
+console.log(Object.getOwnPropertySymbols(user));
+
+// Symbol.for()
+const sym3 = Symbol.for('foo');
+const sym4 = Symbol.for('foo');
+
+console.log(sym3 === sym4);
