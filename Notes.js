@@ -1448,16 +1448,20 @@
 // }
 
 // ################## Generator ##################
-// function* createTeamIterator(teams) {
-//   for (let i = 0; i < teams.length; i++) {
-//     yield teams[i];
-//   }
-// }
+function* createTeamIterator(teams) {
+  for (let i = 0; i < teams.length; i++) {
+    yield teams[i];
+  }
+}
 
-// const teams = ['Red sox', 'Yankees', 'Astros'];
-// const iterator = createTeamIterator(teams);
+const teams = ['Red sox', 'Yankees', 'Astros'];
+const iterator = createTeamIterator(teams);
 
-// console.log(iterator.next());
-// console.log(iterator.next());
-// console.log(iterator.next());
-// console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+
+for (const team of createTeamIterator(teams)) {
+  console.log(team);
+}
