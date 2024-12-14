@@ -1424,25 +1424,40 @@
 // console.log(app.next());
 // console.log(app.next());
 
-const app = {
-  teams: ['Red Sox', 'Yankees', 'Astros'],
-  [Symbol.iterator]: function () {
-    let nextIndex = 0;
-    return {
-      next: () => {
-        return nextIndex < this.teams.length
-          ? { value: this.teams[nextIndex++], done: false }
-          : { done: true };
-      },
-    };
-  },
-};
-const iterator = app[Symbol.iterator]();
-console.log(iterator.next().value);
-console.log(iterator.next().value);
-console.log(iterator.next().value);
-console.log(iterator.next());
+// const app = {
+//   teams: ['Red Sox', 'Yankees', 'Astros'],
+//   [Symbol.iterator]: function () {
+//     let nextIndex = 0;
+//     return {
+//       next: () => {
+//         return nextIndex < this.teams.length
+//           ? { value: this.teams[nextIndex++], done: false }
+//           : { done: true };
+//       },
+//     };
+//   },
+// };
+// const iterator = app[Symbol.iterator]();
+// console.log(iterator.next().value);
+// console.log(iterator.next().value);
+// console.log(iterator.next().value);
+// console.log(iterator.next());
 
-for (const team of app) {
-  console.log(team);
-}
+// for (const team of app) {
+//   console.log(team);
+// }
+
+// ################## Generator ##################
+// function* createTeamIterator(teams) {
+//   for (let i = 0; i < teams.length; i++) {
+//     yield teams[i];
+//   }
+// }
+
+// const teams = ['Red sox', 'Yankees', 'Astros'];
+// const iterator = createTeamIterator(teams);
+
+// console.log(iterator.next());
+// console.log(iterator.next());
+// console.log(iterator.next());
+// console.log(iterator.next());
