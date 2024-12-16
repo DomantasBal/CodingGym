@@ -1465,3 +1465,68 @@
 // for (const team of createTeamIterator(teams)) {
 //   console.log(team);
 // }
+
+// ################## Sets ##################
+
+// const set = new Set([1, 2, 2, 2, 2, 3, 4, 4, 4, 4, 4, 4]);
+
+// // Add
+// set.add(5);
+
+// // Has
+// const hasSix = set.has(6);
+// const hasTwo = set.has(2);
+
+// // Delete
+// set.delete(5);
+
+// // Create an array from Set
+// setArray = Array.from(set);
+
+// // log stuff
+// console.log(set);
+// console.log(hasSix);
+// console.log(hasTwo);
+// console.log(setArray);
+
+// // Iterate through set
+// for (let item of set) {
+//   console.log(item);
+// }
+
+// const interator = set.values();
+
+// console.log(interator.next());
+// console.log(interator.next());
+// console.log(interator.next());
+// console.log(interator.next());
+// console.log(interator.next());
+// console.log(interator.next());
+
+// // Clears Set
+// set.clear();
+// console.log(interator.next());
+
+// ################## Maps ##################
+
+const myMap = new Map();
+
+// Set
+myMap.set('name', 'John');
+myMap.set(1, 'blue');
+myMap.set(2, 'red');
+
+// Get
+console.log(myMap.get('name'));
+console.log(myMap.get(1));
+console.log(myMap.get(2));
+
+// Has
+console.log(myMap.has('name'));
+console.log(myMap.has(1));
+console.log(myMap.has(2));
+
+// Delete
+myMap.delete(2);
+
+console.log(myMap);
