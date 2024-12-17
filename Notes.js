@@ -1509,24 +1509,45 @@
 
 // ################## Maps ##################
 
-const myMap = new Map();
+// const myMap = new Map();
 
-// Set
-myMap.set('name', 'John');
-myMap.set(1, 'blue');
-myMap.set(2, 'red');
+// // Set
+// myMap.set('name', 'John');
+// myMap.set(1, 'blue');
+// myMap.set(2, 'red');
 
-// Get
-console.log(myMap.get('name'));
-console.log(myMap.get(1));
-console.log(myMap.get(2));
+// // Get
+// console.log(myMap.get('name'));
+// console.log(myMap.get(1));
+// console.log(myMap.get(2));
 
-// Has
-console.log(myMap.has('name'));
-console.log(myMap.has(1));
-console.log(myMap.has(2));
+// // Has
+// console.log(myMap.has('name'));
+// console.log(myMap.has(1));
+// console.log(myMap.has(2));
 
-// Delete
-myMap.delete(2);
+// // Delete
+// myMap.delete(2);
 
-console.log(myMap);
+// console.log(myMap);
+
+// const peopleMap = new Map();
+// peopleMap.set('brad', { phone: '555-55-55555', email: 'brad@mgail.com' });
+// peopleMap.set('jack', { phone: '555-55-55555', email: 'jack@mgail.com' });
+// peopleMap.set('joe', { phone: '555-55-55555', email: 'joe@mgail.com' });
+
+// peopleMap.forEach((person) => console.log(person.email));
+
+// console.log(peopleMap.keys());
+// console.log(peopleMap.values());
+// console.log(peopleMap.entries());
+
+// const iterator = peopleMap.values();
+// console.log(iterator.next());
+// console.log(iterator.next());
+// console.log(iterator.next());
+// console.log(iterator.next());
+
+// const peopleArr = Array.from(peopleMap);
+
+// console.log(peopleArr);
