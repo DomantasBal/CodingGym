@@ -1552,66 +1552,117 @@
 
 // console.log(peopleArr);
 
-// ################## Stacks ##################
+// ################## Stacks (LIFO) ##################
 
-class Stack {
+// class Stack {
+//   constructor() {
+//     this._items = [];
+//     this._count = 0;
+//   }
+
+//   push(item) {
+//     this._items[this._count] = item;
+//     this._count++;
+//   }
+
+//   pop() {
+//     if (this.isEmpty()) {
+//       return 'Underflow';
+//     }
+
+//     const item = this._items[this._count - 1];
+
+//     this._count--;
+
+//     for (let i = this._count; i < this._items.length; i++) {
+//       this._items[i] = this._items[i + 1];
+//     }
+//     this._items.length = this._count;
+//     return item;
+//   }
+
+//   peek() {
+//     if (this.isEmpty()) {
+//       return 'No items in the stack';
+//     }
+
+//     return this._items[this._count - 1];
+//   }
+
+//   isEmpty() {
+//     return this._count === 0;
+//   }
+
+//   length() {
+//     return this._count;
+//   }
+
+//   clear() {
+//     this._items = [];
+//     this._count = 0;
+//   }
+// }
+
+// const stack = new Stack();
+// stack.push('Item 1');
+// stack.push('Item 2');
+// stack.push('Item 3');
+// console.log(stack);
+
+// stack.pop();
+// stack.pop();
+
+// stack.clear();
+
+// console.log('Top item: ', stack.peek());
+
+// ################### Queues (FIFO) ################
+class Queue {
   constructor() {
     this._items = [];
     this._count = 0;
+    this._front = 0;
   }
 
-  push(item) {
+  enqueue(item) {
     this._items[this._count] = item;
     this._count++;
   }
 
-  pop() {
+  dequeue() {
     if (this.isEmpty()) {
-      return 'Underflow';
+      return undefined;
     }
 
-    const item = this._items[this._count - 1];
-
-    this._count--;
-
-    for (let i = this._count; i < this._items.length; i++) {
+    const item = this._items[this._front];
+    for (let i = this._front; i < this._count - 1; i++) {
       this._items[i] = this._items[i + 1];
     }
+    this._count--;
     this._items.length = this._count;
     return item;
   }
 
   peek() {
     if (this.isEmpty()) {
-      return 'No items in the stack';
+      return 'No items in the queue';
     }
+    return this._items[this._front];
+  }
 
-    return this._items[this._count - 1];
+  length() {
+    return this._count - this._front;
   }
 
   isEmpty() {
     return this._count === 0;
   }
-
-  length() {
-    return this._count;
-  }
-
-  clear() {
-    this._items = [];
-    this._count = 0;
-  }
 }
 
-const stack = new Stack();
-stack.push('Item 1');
-stack.push('Item 2');
-stack.push('Item 3');
-console.log(stack);
+const q = new Queue();
+q.enqueue('Item 1');
+q.enqueue('Item 2');
+q.enqueue('Item 3');
 
-stack.pop();
-stack.pop();
-
-stack.clear();
-
-console.log('Top item: ', stack.peek());
+console.log('Front item:', q.peek());
+console.log('Queue length:', q.length());
