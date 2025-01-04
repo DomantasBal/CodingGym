@@ -1,7 +1,7 @@
 // Case 1
-// function reverseString(str) {
-//   return str.split('').reverse().join('');
-// }
+function reverseString(str) {
+  return str.split('').reverse().join('');
+}
 
 // Case 2
 // function reverseString(str) {
@@ -14,4 +14,4 @@
 //   return reversed;
 // }
 
-// module.exports = reverseString;
+module.exports = reverseString;
