@@ -2,7 +2,7 @@ const reverseString = require('./reverseString');
 
 describe('reverse string', () => {
   it('should be a function', () => {
-    excpect(typeof reverseString).toEqual('function');
+    expect(typeof reverseString).toEqual('function');
   });
 
   it('should return string', () => {
@@ -11,5 +11,6 @@ describe('reverse string', () => {
 
   it('should return reversed string', () => {
     expect(reverseString('hello')).toEqual('olleh');
+    expect(reverseString('bye')).toEqual('eyb');
   });
 });
