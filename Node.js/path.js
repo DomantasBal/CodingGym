@@ -24,7 +24,7 @@
 // console.log(resolve);
 
 // __dirname
-console.log(__dirname);
+// console.log(__dirname);
 
 // __filename
-console.log(__filename);
+// console.log(__filename);
