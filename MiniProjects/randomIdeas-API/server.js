@@ -17,7 +17,6 @@ app.get('/', (req, res) => {
 
 const ideasRouter = require('./routes/ideas');
 app.use('/api/ideas', ideasRouter);
-
 app.listen(port, () => {
   console.log(`server running on port ${port}`);
 });
