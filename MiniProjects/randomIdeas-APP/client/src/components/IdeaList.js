@@ -24,6 +24,11 @@ class IdeaList {
     }
   }
 
+  addIdeaToList(idea) {
+    this._ideas.push(idea);
+    this.render();
+  }
+
   getTagClass(tag) {
     tag = tag.toLowerCase();
 
@@ -37,7 +42,7 @@ class IdeaList {
     this._ideaListEl.innerHTML = this._ideas
       .map((idea) => {
         const tagClass = this.getTagClass(idea.tag);
-        console.log(tagClass);
+
         return `
         <div class="card">
           <button class="delete"><i class="fas fa-times"></i></button>
